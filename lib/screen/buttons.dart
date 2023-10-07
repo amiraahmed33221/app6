@@ -26,7 +26,7 @@ class Buttons extends StatelessWidget {
                 fixedSize: const Size(170, 25),
               ),
             onPressed: (){
-              // Navigator.push(context,MaterialPageRoute(builder: (context) => ExtractedData()),);
+              Navigator.push(context,MaterialPageRoute(builder: (context) => ExtractedData()),);
               if(formKey.currentState!.validate()){
                 print('${nameController.text}');
               }
@@ -43,7 +43,7 @@ class Buttons extends StatelessWidget {
                 fixedSize: const Size(170, 25),
               ),
               onPressed: (){
-                // Navigator.push context,MaterialPageRoute(builder: (context) => ExtractedData()),);
+                Navigator.push( context,MaterialPageRoute(builder: (context) => ExtractedData()),);
                 if(formKey.currentState!.validate()){
                   print('${nationalIDController.text}');
                 }

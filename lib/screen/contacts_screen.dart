@@ -21,66 +21,68 @@ class _ContactsScreenState extends State<ContactsScreen> {
 
       body: Form(
         key: formKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage("assets/Egypt.jpg"),
+            ),
+          ),
+          child: Column(
             children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage("assets/Egypt.jpg"),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: TextFormField(
-                  controller: nameController,
-                  decoration: InputDecoration(
-                    labelText: 'Name',
-                    border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  validator:(data){
-                    if(data!.isEmpty){
-                      return 'This field is required';
-                    }
-                  } ,
-                ),
-              ),
-            ),
-            const SizedBox(height: 7),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                height: 50,
-                child: TextFormField(
-                  controller: nationalIDController,
-                  decoration: InputDecoration(
-                    labelText: 'National ID',
-                    border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
+                  child: TextFormField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                      labelText: 'Name',
+                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
                     ),
+                    validator:(data){
+                      if(data!.isEmpty){
+                        return 'This field is required';
+                      }
+                    } ,
                   ),
-                  validator:(data) {
-                    if (data!.isEmpty) {
-                      return 'This field is required';
-                    }
-                  },
                 ),
               ),
-            ),
-            const SizedBox(height: 7),
-            Buttons(),
-          ],
+              const SizedBox(height: 7),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  height: 50,
+                  child: TextFormField(
+                    controller: nationalIDController,
+                    decoration: InputDecoration(
+                      labelText: 'National ID',
+                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                    ),
+                    validator:(data) {
+                      if (data!.isEmpty) {
+                        return 'This field is required';
+                      }
+                    },
+                  ),
+                ),
+              ),
+              const SizedBox(height: 7),
+              Buttons(),
+
+
+
+            ],
+          ),
         ),
       ),
     );
